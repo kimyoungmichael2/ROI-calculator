@@ -13,7 +13,12 @@
   background: darkgray;
 }
 
+/* 
 h1 {
   font-size: 1rem;
   text-align: center;
+} */
+
+.pull-right {
+  float: right;
 }
