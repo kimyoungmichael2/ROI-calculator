@@ -22,3 +22,17 @@ h1 {
 .pull-right {
   float: right;
 }
+
+.ui.secondary.pointing.menu a:first-child {
+  margin-left: auto !important;
+}
+
+.ui.secondary.pointing.menu a:last-child {
+  margin-right: auto !important;
+}
+
+.wrapped{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

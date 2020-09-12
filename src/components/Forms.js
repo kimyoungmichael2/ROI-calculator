@@ -26,13 +26,13 @@ class Forms extends Component {
             <div class="row">
               <div class="column"><br></br></div>
               <div class="column">
-                <h1>Annual procedures</h1>
+                <h3>Annual procedures</h3>
               </div>
               <div class="column">
-                <h1>Average patient fee</h1>
+                <h3>Average patient fee</h3>
               </div>
               <div class="column">
-                <h1>Annual production</h1>
+                <h3>Annual production</h3>
               </div>
               <div class="column"><br></br></div>
             </div>  
@@ -58,7 +58,7 @@ class Forms extends Component {
                 </form>    
                 </div>
               <div class="column">
-                <h1>${this.props.CB_APR * this.props.CB_APF}</h1>
+                <h3>${this.props.CB_APR * this.props.CB_APF}</h3>
               </div>
               <div class="column"><br></br></div>
             </div>  
@@ -84,7 +84,7 @@ class Forms extends Component {
                 </form>    
                 </div>
               <div class="column">
-                <h1>${this.props.IMP_APR * this.props.IMP_APF}</h1>
+                <h3>${this.props.IMP_APR * this.props.IMP_APF}</h3>
               </div>
               <div class="column"><br></br></div>
             </div>  
