@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Divider, Tab } from 'semantic-ui-react'
-import Pane1 from '../../views/Step1'
+import Pane1 from '../Step1'
 import _ from 'lodash'
 
 const panes = [
