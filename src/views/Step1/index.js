@@ -1,7 +1,27 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Grid, Segment, Form } from 'semantic-ui-react'
 
-const Pane1 = () => (
+
+class Pane1 extends Component {
+
+  CB_APR_handleChange = (e) => {
+      this.props.CB_APR_change(e.target.value);
+  }
+
+  CB_APF_handleChange = (e) => {
+      this.props.CB_APF_change(e.target.value);
+  }
+
+  IMP_APR_handleChange = (e) => {
+      this.props.IMP_APR_change(e.target.value);
+  }
+
+  IMP_APF_handleChange = (e) => {
+      this.props.IMP_APF_change(e.target.value);
+  }
+
+  render() {
+      return (
   <div>
     <Grid stackable columns ='equal'>
     <Grid.Row stretched>
@@ -33,21 +53,27 @@ const Pane1 = () => (
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-               <h4><input placeholder='12000' /></h4>
-             </Form.Field>
+             <input type = 'number' 
+                    value={this.props.CB_APR} 
+                    onChange={this.CB_APR_handleChange} 
+                    />             
+              </Form.Field>
            </Form>
         </Grid.Column>
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-               <h4><input placeholder='' /></h4>
-             </Form.Field>
+             <input type = 'number' 
+                    value={this.props.CB_APF} 
+                    onChange={this.CB_APF_handleChange} 
+                    />
+              </Form.Field>
            </Form>        
            </Grid.Column>
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-               <h4><input placeholder='' /></h4>
+               <h4>${this.props.CB_APR * this.props.CB_APF}</h4>
              </Form.Field>
            </Form>   
         </Grid.Column>
@@ -62,21 +88,27 @@ const Pane1 = () => (
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-               <h4><input placeholder='12000' /></h4>
+             <input type = 'number' 
+                    value={this.props.IMP_APR} 
+                    onChange={this.IMP_APR_handleChange} 
+                    />
              </Form.Field>
            </Form>
         </Grid.Column>
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-               <h4><input placeholder='' /></h4>
-             </Form.Field>
+             <input type = 'number' 
+                    value={this.props.IMP_APF} 
+                    onChange={this.IMP_APF_handleChange} 
+                    />             
+            </Form.Field>
            </Form>        
            </Grid.Column>
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-               <h4><input placeholder='' /></h4>
+             <h4>${this.props.IMP_APR * this.props.IMP_APF}</h4>
              </Form.Field>
            </Form>   
         </Grid.Column>
@@ -173,12 +205,14 @@ const Pane1 = () => (
     </Grid.Column>
 
     <Grid.Column width={5}>
-      <Segment>Hello</Segment>
+      <Segment>${this.props.Step1_Total}</Segment>
     </Grid.Column>
 
     </Grid.Row>
     </Grid>
   </div>
-)
+        )
+      }
+  }
 
 export default Pane1

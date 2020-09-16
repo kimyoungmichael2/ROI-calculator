@@ -3,16 +3,13 @@ import Forms from './Forms.js'
 
 class GrandTotal extends Component {
 
-    constructor(props) {
-        super(props)
-    
-        this.state = {
+        state = {
              CB_APR : 230,
              CB_APF : 1500,
              IMP_APR: 15,
              IMP_APF: 2000
         }
-    }
+    
 
     CB_APR_changeHandler = (CB_APR) => {
         this.setState({
