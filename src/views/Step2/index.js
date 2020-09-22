@@ -2,46 +2,38 @@ import React, { Component } from 'react'
 import { Grid, Segment, Form, Header } from 'semantic-ui-react'
 
 
-class Pane1 extends Component {
-    
-  CB_APR_handleChange = (e) => {
-      this.props.CB_APR_change(e.target.value);
+class Pane2 extends Component {
+
+  CB_PUC_handleChange = (e) => {
+      this.props.CB_PUC_change(e.target.value);
   }
 
-  CB_APF_handleChange = (e) => {
-      this.props.CB_APF_change(e.target.value);
+  IMP_PUC_handleChange = (e) => {
+      this.props.IMP_PUC_change(e.target.value);
   }
 
-  IMP_APR_handleChange = (e) => {
-      this.props.IMP_APR_change(e.target.value);
+  NG_PUC_handleChange = (e) => {
+      this.props.NG_PUC_change(e.target.value);
   }
 
-  IMP_APF_handleChange = (e) => {
-      this.props.IMP_APF_change(e.target.value);
-  }
-  
-  NG_APR_handleChange = (e) => {
-    this.props.NG_APR_change(e.target.value);
+  VN_PUC_handleChange = (e) => {
+      this.props.VN_PUC_change(e.target.value);
   }
 
-  NG_APF_handleChange = (e) => {
-      this.props.NG_APF_change(e.target.value);
+  OT_PUC_handleChange = (e) => {
+      this.props.OT_PUC_change(e.target.value);
   }
 
-  VN_APR_handleChange = (e) => {
-      this.props.VN_APR_change(e.target.value);
+  RE_PUC_handleChange = (e) => {
+      this.props.RE_PUC_change(e.target.value);
   }
 
-  VN_APF_handleChange = (e) => {
-      this.props.VN_APF_change(e.target.value);
+  RE_AV_handleChange = (e) => {
+      this.props.RE_AV_change(e.target.value);
   }
 
-  OT_APR_handleChange = (e) => {
-      this.props.OT_APR_change(e.target.value);
-  }
-
-  OT_APF_handleChange = (e) => {
-      this.props.OT_APF_change(e.target.value);
+  STR_SAV_handleChange = (e) => {
+      this.props.STR_SAV_change(e.target.value);
   }
   
   render() {
@@ -61,13 +53,13 @@ class Pane1 extends Component {
           <h4></h4>
         </Grid.Column>
         <Grid.Column width={3}>
-          <h4>Annual procedures</h4>
+          <h4>Per unit cost</h4>
         </Grid.Column>
         <Grid.Column width={3}>
-          <h4>Average patient fee</h4>
+          <h4>Annual volume</h4>
         </Grid.Column>
         <Grid.Column width={3}>
-          <h4>Annual production</h4>
+          <h4>Savings</h4>
         </Grid.Column>
       </Grid.Row>
     </Grid>
@@ -81,8 +73,8 @@ class Pane1 extends Component {
            <Form>
              <Form.Field>
              <input type = 'number' 
-                    value={this.props.CB_APR} 
-                    onChange={this.CB_APR_handleChange} 
+                    value={this.props.CB_PUC} 
+                    onChange={this.CB_PUC_handleChange} 
                     />             
               </Form.Field>
            </Form>
@@ -90,17 +82,14 @@ class Pane1 extends Component {
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-             <input type = 'number' 
-                    value={this.props.CB_APF} 
-                    onChange={this.CB_APF_handleChange} 
-                    /> 
+               <h4>{this.props.CB_APR}</h4>
               </Form.Field>
            </Form>        
            </Grid.Column>
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-               <h4>${this.props.CB_APR * this.props.CB_APF}</h4>
+               <h4>${this.props.CB_PUC * this.props.CB_APR}</h4>
              </Form.Field>
            </Form>   
         </Grid.Column>
@@ -116,26 +105,23 @@ class Pane1 extends Component {
            <Form>
              <Form.Field>
              <input type = 'number' 
-                    value={this.props.IMP_APR} 
-                    onChange={this.IMP_APR_handleChange} 
-                    />
+                    value={this.props.IMP_PUC} 
+                    onChange={this.IMP_PUC_handleChange} 
+                    />    
              </Form.Field>
            </Form>
         </Grid.Column>
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-             <input type = 'number' 
-                    value={this.props.IMP_APF} 
-                    onChange={this.IMP_APF_handleChange} 
-                    />             
+               <h4>{this.props.IMP_APR}</h4>         
             </Form.Field>
            </Form>        
            </Grid.Column>
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-             <h4>${this.props.IMP_APR * this.props.IMP_APF}</h4>
+             <h4>${this.props.IMP_PUC * this.props.IMP_APR}</h4>
              </Form.Field>
            </Form>   
         </Grid.Column>
@@ -151,26 +137,23 @@ class Pane1 extends Component {
            <Form>
              <Form.Field>
              <input type = 'number' 
-                    value={this.props.NG_APR} 
-                    onChange={this.NG_APR_handleChange} 
-                    />
+                    value={this.props.NG_PUC} 
+                    onChange={this.NG_PUC_handleChange} 
+                    />    
              </Form.Field>
            </Form>
         </Grid.Column>
         <Grid.Column width={3}>
            <Form>
-           <Form.Field>
-             <input type = 'number' 
-                    value={this.props.NG_APF} 
-                    onChange={this.NG_APF_handleChange} 
-                    />             
+             <Form.Field>
+               <h4>{this.props.NG_APR}</h4>         
             </Form.Field>
            </Form>        
            </Grid.Column>
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-             <h4>${this.props.NG_APR * this.props.NG_APF}</h4>
+             <h4>${this.props.NG_PUC * this.props.NG_APR}</h4>
              </Form.Field>
            </Form>   
         </Grid.Column>
@@ -186,28 +169,25 @@ class Pane1 extends Component {
            <Form>
              <Form.Field>
              <input type = 'number' 
-                    value={this.props.VN_APR} 
-                    onChange={this.VN_APR_handleChange} 
-                    />
+                    value={this.props.VN_PUC} 
+                    onChange={this.VN_PUC_handleChange} 
+                    />    
              </Form.Field>
            </Form>
         </Grid.Column>
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-             <input type = 'number' 
-                    value={this.props.VN_APF} 
-                    onChange={this.VN_APF_handleChange} 
-                    />             
-             </Form.Field>
+               <h4>{this.props.VN_APR}</h4>         
+            </Form.Field>
            </Form>        
            </Grid.Column>
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-             <h4>${this.props.VN_APR * this.props.VN_APF}</h4>
+             <h4>${this.props.VN_PUC * this.props.VN_APR}</h4>
              </Form.Field>
-           </Form>   
+           </Form>    
         </Grid.Column>
       </Grid.Row>
     </Grid>
@@ -221,28 +201,82 @@ class Pane1 extends Component {
            <Form>
              <Form.Field>
              <input type = 'number' 
-                    value={this.props.OT_APR} 
-                    onChange={this.OT_APR_handleChange} 
-                    />
+                    value={this.props.OT_PUC} 
+                    onChange={this.OT_PUC_handleChange} 
+                    />    
              </Form.Field>
            </Form>
         </Grid.Column>
         <Grid.Column width={3}>
            <Form>
-           <Form.Field>
-             <input type = 'number' 
-                    value={this.props.OT_APF} 
-                    onChange={this.OT_APF_handleChange} 
-                    />             
+             <Form.Field>
+               <h4>{this.props.OT_APR}</h4>         
             </Form.Field>
            </Form>        
            </Grid.Column>
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-             <h4>${this.props.OT_APR * this.props.OT_APF}</h4>
+             <h4>${this.props.OT_PUC * this.props.OT_APR}</h4>
              </Form.Field>
-           </Form>   
+           </Form>     
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+
+    <Grid stackable columns='equal'>
+    <Grid.Row stretched>
+        <Grid.Column textAlign='right'>
+          <h4>Remakes per year</h4>
+        </Grid.Column>
+        <Grid.Column width={3}>
+           <Form>
+             <Form.Field>
+             <input type = 'number' 
+                    value={this.props.RE_PUC} 
+                    onChange={this.RE_PUC_handleChange} 
+                    />    
+             </Form.Field>
+           </Form>
+        </Grid.Column>
+        <Grid.Column width={3}>
+           <Form>
+             <Form.Field>
+             <input type = 'number' 
+                    value={this.props.RE_AV} 
+                    onChange={this.RE_AV_handleChange} 
+                    />    
+            </Form.Field>
+           </Form>        
+           </Grid.Column>
+        <Grid.Column width={3}>
+            <Form>
+             <Form.Field>
+             <h4>${this.props.RE_PUC * this.props.RE_AV}</h4>
+             </Form.Field>
+           </Form>     
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+
+    <Grid stackable columns='equal'>
+    <Grid.Row stretched>
+        <Grid.Column textAlign='right'>
+          <h4>Annual storage savings from moving to digital models</h4>
+        </Grid.Column>
+        <Grid.Column width={3}>
+        </Grid.Column>
+        <Grid.Column width={3}>    
+           </Grid.Column>
+        <Grid.Column width={3}>
+           <Form>
+             <Form.Field>
+             <input type = 'number' 
+                    value={this.props.STR_SAV} 
+                    onChange={this.STR_SAV_handleChange} 
+                    />    
+            </Form.Field>
+            </Form>
         </Grid.Column>
       </Grid.Row>
     </Grid>
@@ -253,8 +287,12 @@ class Pane1 extends Component {
       <div>
     <Segment circular inverted color='blue' style={square}>
       <Header as='h2' inverted >
-      ${this.props.Step1_Total}
-        <Header.Subheader>Approximate annual production</Header.Subheader>
+      ${this.props.Total_Savings}
+        <Header.Subheader>Total projected annual savings</Header.Subheader>
+      </Header>
+      <Header as='h2' inverted >
+      ${Math.round(this.props.Total_Savings / 12)}
+        <Header.Subheader>Average monthly savings</Header.Subheader>
       </Header>
     </Segment>
     </div>
@@ -267,4 +305,4 @@ class Pane1 extends Component {
       }
   }
 
-export default Pane1
+export default Pane2
