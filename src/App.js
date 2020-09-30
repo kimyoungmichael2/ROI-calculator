@@ -10,7 +10,6 @@ function App() {
     <div>
     <Title />
     <Tabs />
-    {/* <GrandTotal /> */}
     </div>
   );
 }

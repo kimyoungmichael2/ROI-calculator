@@ -328,7 +328,11 @@ OT_AV_changeHandler = (OT_AV) => {
           },
           {
             menuItem: '4. Total Cost of Ownership',
-            render: () => <Tab.Pane attached={false}>Tab 4 Content</Tab.Pane>,
+            render: () => <Tab.Pane attached={false}>
+              <Pane4
+
+              />
+            </Tab.Pane>,
           },
         ]} />
       </div>
