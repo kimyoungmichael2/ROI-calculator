@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Segment, Form, Header } from 'semantic-ui-react'
+import { Divider, Grid, Segment, Form, Header } from 'semantic-ui-react'
 
 
 class Pane4 extends Component {
@@ -14,6 +14,75 @@ class Pane4 extends Component {
     <Grid.Row stretched>
 
     <Grid.Column>
+      
+    <Grid stackable columns='equal'>
+    <Grid.Row stretched>
+        <Grid.Column textAlign='left'>
+            <Segment inverted color='blue'>
+                <h2>1 year</h2>
+            </Segment>
+        </Grid.Column>
+      </Grid.Row>
+      </Grid>
+
+    <Grid stackable columns='equal'>
+    <Grid.Row stretched>
+        <Grid.Column textAlign='right' floated='right'>
+          <h4>Medit scanner tips</h4>
+        </Grid.Column>
+        <Grid.Column floated='right' width={3}>
+            <h4>${this.props.Annual_tip_cost}</h4>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+
+    <Grid stackable columns='equal'>
+    <Grid.Row stretched>
+        <Grid.Column textAlign='right' floated='right'>
+          <h4>Medit i500 scanner</h4>
+        </Grid.Column>
+        <Grid.Column floated='right' width={3}>
+           <Form>
+             <Form.Field>
+             <input type = 'number' 
+                    value={this.props.CB_AV} 
+                    onChange={this.CB_AV_handleChange} 
+                    />             
+              </Form.Field>
+           </Form>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+
+    <Grid stackable columns='equal'>
+    <Grid.Row stretched>
+        <Grid.Column textAlign='right' floated='right'>
+          <h4>Medit scanner tips</h4>
+        </Grid.Column>
+        <Grid.Column floated='right' width={3}>
+            <h4>(# of procedures/year) / 50 * 240 </h4>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+
+    <Grid stackable columns='equal'>
+    <Grid.Row stretched>
+        <Grid.Column textAlign='right' floated='right'>
+          <h4>Medit scanner tips</h4>
+        </Grid.Column>
+        <Grid.Column floated='right' width={3}>
+            <h4>(# of procedures/year) / 50 * 240 </h4>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+
+    <Grid stackable columns='equal'>
+    <Grid.Row stretched>
+        <Grid.Column textAlign='right' floated='right'>
+        <Divider section />
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
       
     <Grid stackable columns='equal'>
     <Grid.Row stretched>
@@ -75,6 +144,15 @@ class Pane4 extends Component {
         </Grid.Column>
       </Grid.Row>
     </Grid>
+
+    <Grid stackable columns='equal'>
+    <Grid.Row stretched>
+        <Grid.Column textAlign='right' floated='right'>
+        <Divider section />
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+
 
 
 

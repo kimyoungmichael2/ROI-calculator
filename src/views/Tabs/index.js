@@ -330,7 +330,8 @@ OT_AV_changeHandler = (OT_AV) => {
             menuItem: '4. Total Cost of Ownership',
             render: () => <Tab.Pane attached={false}>
               <Pane4
-
+                  Annual_tip_cost=
+                  {((this.state.CB_APR + this.state.IMP_APR + this.state.NG_APR + this.state.VN_APR + this.state.OT_APR) / 50 * 60)}
               />
             </Tab.Pane>,
           },
