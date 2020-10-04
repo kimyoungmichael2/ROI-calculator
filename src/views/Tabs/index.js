@@ -33,7 +33,9 @@ class Tabs extends Component {
       IMP_AV : 0,
       NG_AV : 0,
       VN_AV : 0,
-      OT_AV : 0}
+      OT_AV : 0,
+    
+      I5C : 18000}
 
 
 //Step 1 States
@@ -177,6 +179,12 @@ VN_AV_changeHandler = (VN_AV) => {
 OT_AV_changeHandler = (OT_AV) => {
   this.setState({
      OT_AV : OT_AV
+  })
+  }
+
+I5C_changeHandler = (I5C) => {
+  this.setState({
+     I5C : I5C
   })
   }
 
@@ -332,6 +340,9 @@ OT_AV_changeHandler = (OT_AV) => {
               <Pane4
                   Annual_tip_cost=
                   {((this.state.CB_APR + this.state.IMP_APR + this.state.NG_APR + this.state.VN_APR + this.state.OT_APR) / 50 * 60)}
+
+                  I5C={this.state.I5C}
+                  I5C_change={this.I5C_changeHandler}
               />
             </Tab.Pane>,
           },

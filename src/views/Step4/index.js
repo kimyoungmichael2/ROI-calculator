@@ -3,6 +3,11 @@ import { Divider, Grid, Segment, Form, Header } from 'semantic-ui-react'
 
 
 class Pane4 extends Component {
+
+  I5C_handleChange = (e) => {
+    this.props.I5C_change(e.target.value);
+}
+
   
   render() {
 
@@ -45,8 +50,8 @@ class Pane4 extends Component {
            <Form>
              <Form.Field>
              <input type = 'number' 
-                    value={this.props.CB_AV} 
-                    onChange={this.CB_AV_handleChange} 
+                    value={this.props.I5C} 
+                    onChange={this.I5C_handleChange} 
                     />             
               </Form.Field>
            </Form>
