@@ -8,7 +8,6 @@ import GrandTotal from './components/GrandTotal'
 function App() {
   return (
     <div>
-    <h1>test</h1>
     <Title />
     <Tabs />
     </div>
