@@ -11,7 +11,7 @@ class Pane4 extends Component {
   
   render() {
 
-    const square = { width: 225, height: 225 }
+    const square = { width: 300, height: 300 }
     
       return (
   <div>
@@ -62,25 +62,15 @@ class Pane4 extends Component {
     <Grid stackable columns='equal'>
     <Grid.Row stretched>
         <Grid.Column textAlign='right' floated='right'>
-          <h4>Medit scanner tips</h4>
+          <h4>Total 1st year cost of ownership</h4>
         </Grid.Column>
         <Grid.Column floated='right' width={3}>
-            <h4>(# of procedures/year) / 50 * 240 </h4>
+            <h2>${this.props.Total_annual_cost}</h2>
         </Grid.Column>
       </Grid.Row>
     </Grid>
 
-    <Grid stackable columns='equal'>
-    <Grid.Row stretched>
-        <Grid.Column textAlign='right' floated='right'>
-          <h4>Medit scanner tips</h4>
-        </Grid.Column>
-        <Grid.Column floated='right' width={3}>
-            <h4>(# of procedures/year) / 50 * 240 </h4>
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-
+{/* 
     <Grid stackable columns='equal'>
     <Grid.Row stretched>
         <Grid.Column textAlign='right' floated='right'>
@@ -88,24 +78,25 @@ class Pane4 extends Component {
         </Grid.Column>
       </Grid.Row>
     </Grid>
-      
+       */}
+
     <Grid stackable columns='equal'>
     <Grid.Row stretched>
         <Grid.Column textAlign='left'>
             <Segment inverted color='blue'>
-                <h2>1 year</h2>
+                <h2>5 year</h2>
             </Segment>
         </Grid.Column>
       </Grid.Row>
       </Grid>
 
-    <Grid stackable columns='equal'>
+      <Grid stackable columns='equal'>
     <Grid.Row stretched>
         <Grid.Column textAlign='right' floated='right'>
           <h4>Medit scanner tips</h4>
         </Grid.Column>
         <Grid.Column floated='right' width={3}>
-            <h4>(# of procedures/year) / 50 * 240 </h4>
+            <h4>${this.props.Annual_tip_cost * 5}</h4>
         </Grid.Column>
       </Grid.Row>
     </Grid>
@@ -119,8 +110,8 @@ class Pane4 extends Component {
            <Form>
              <Form.Field>
              <input type = 'number' 
-                    value={this.props.CB_AV} 
-                    onChange={this.CB_AV_handleChange} 
+                    value={this.props.I5C} 
+                    onChange={this.I5C_handleChange} 
                     />             
               </Form.Field>
            </Form>
@@ -131,32 +122,43 @@ class Pane4 extends Component {
     <Grid stackable columns='equal'>
     <Grid.Row stretched>
         <Grid.Column textAlign='right' floated='right'>
-          <h4>Medit scanner tips</h4>
+          <h4>Estimated total 5 year cost of ownership</h4>
         </Grid.Column>
         <Grid.Column floated='right' width={3}>
-            <h4>(# of procedures/year) / 50 * 240 </h4>
+            <h2>${(this.props.Annual_tip_cost * 5) + this.props.I5C * 1}</h2>
         </Grid.Column>
       </Grid.Row>
     </Grid>
 
     <Grid stackable columns='equal'>
     <Grid.Row stretched>
-        <Grid.Column textAlign='right' floated='right'>
-          <h4>Medit scanner tips</h4>
-        </Grid.Column>
-        <Grid.Column floated='right' width={3}>
-            <h4>(# of procedures/year) / 50 * 240 </h4>
+        <Grid.Column textAlign='left'>
+            <Segment.Group horizontal>
+              <Segment textAlign='center' inverted padded='very' color='blue'>
+                  <h2>{Math.round(((this.props.Annual_tip_cost * 5) + this.props.I5C * 1) / (this.props.Total_savings_increase / 12) * 10) / 10}</h2>
+                  <p>Payback period on 5 year total cost (in months)</p>
+              </Segment>
+              <Segment textAlign='center' inverted padded='very' color='blue'>
+                  <h2>${(this.props.Total_savings_increase * 5) - ((this.props.Annual_tip_cost * 5) + this.props.I5C * 1)}</h2>
+                  <p>5 year net profit</p>
+              </Segment>
+              <Segment textAlign='center' inverted padded='very' color='blue'>
+                  <h2>5 year</h2>
+              </Segment>
+            </Segment.Group>
         </Grid.Column>
       </Grid.Row>
-    </Grid>
+      </Grid>
 
-    <Grid stackable columns='equal'>
+
+
+    {/* <Grid stackable columns='equal'>
     <Grid.Row stretched>
         <Grid.Column textAlign='right' floated='right'>
         <Divider section />
         </Grid.Column>
       </Grid.Row>
-    </Grid>
+    </Grid> */}
 
 
 
@@ -167,12 +169,12 @@ class Pane4 extends Component {
       <div>
     <Segment circular inverted color='blue' style={square}>
       <Header as='h2' inverted >
-      ${this.props.Total_Increase}
-        <Header.Subheader>Total projected annual increase in production</Header.Subheader>
+      ${this.props.Total_savings_increase}
+        <Header.Subheader>Total projected 1 year savings and increased production</Header.Subheader>
       </Header>
       <Header as='h2' inverted >
-      ${Math.round(this.props.Total_Increase / 12)}
-        <Header.Subheader>Average monthly increased production</Header.Subheader>
+      ${Math.round(this.props.Total_savings_increase / 12)}
+        <Header.Subheader>Per month</Header.Subheader>
       </Header>
     </Segment>
     </div>

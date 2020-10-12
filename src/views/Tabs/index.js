@@ -339,10 +339,38 @@ I5C_changeHandler = (I5C) => {
             render: () => <Tab.Pane attached={false}>
               <Pane4
                   Annual_tip_cost=
-                  {((this.state.CB_APR + this.state.IMP_APR + this.state.NG_APR + this.state.VN_APR + this.state.OT_APR) / 50 * 60)}
+                  {((this.state.CB_APR * 1 + this.state.IMP_APR * 1 + this.state.NG_APR * 1 + this.state.VN_APR * 1 + this.state.OT_APR * 1) / 50 * 60)}
+
+                  Total_annual_cost=
+                  {((this.state.CB_APR * 1 + this.state.IMP_APR * 1 + this.state.NG_APR * 1 + this.state.VN_APR * 1 + this.state.OT_APR * 1) / 50 * 60) + this.state.I5C * 1}
 
                   I5C={this.state.I5C}
                   I5C_change={this.I5C_changeHandler}
+
+                  Total_savings_increase=
+                  {this.state.CB_APR * this.state.CB_PUC
+                    + 
+                   this.state.IMP_APR * this.state.IMP_PUC
+                    + 
+                   this.state.NG_APR * this.state.NG_PUC
+                    + 
+                   this.state.VN_APR * this.state.VN_PUC
+                    + 
+                   this.state.OT_APR * this.state.OT_PUC
+                    + 
+                   this.state.RE_PUC * this.state.RE_AV
+                    + 
+                   this.state.STR_SAV * 1 
+                   + 
+                   this.state.CB_AV * this.state.CB_APF
+                   + 
+                  this.state.IMP_AV * this.state.IMP_APF
+                   + 
+                  this.state.NG_AV * this.state.NG_APF
+                   + 
+                  this.state.VN_AV * this.state.VN_APF
+                   + 
+                  this.state.OT_AV * this.state.OT_APF}
               />
             </Tab.Pane>,
           },
