@@ -143,7 +143,12 @@ class Pane4 extends Component {
                   <p>5 year net profit</p>
               </Segment>
               <Segment textAlign='center' inverted padded='very' color='blue'>
-                  <h2>5 year</h2>
+                  <h2>{Math.round(((this.props.Total_savings_increase * 5) - ((this.props.Annual_tip_cost * 5) + this.props.I5C * 1))
+                   / 
+                   ((this.props.Annual_tip_cost * 5) + this.props.I5C * 1)
+                   *
+                   100)}%</h2>
+                   <p>5 year return on investment (ROI)</p>
               </Segment>
             </Segment.Group>
         </Grid.Column>

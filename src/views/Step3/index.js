@@ -77,8 +77,8 @@ class Pane3 extends Component {
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-                <h4>%
-                   {Math.round(((this.props.CB_AP + this.props.CB_AV * this.props.CB_APF) - this.props.CB_AP) / this.props.CB_AP * 100)}
+                <h4>
+                   {Math.round(((this.props.CB_AP + this.props.CB_AV * this.props.CB_APF) - this.props.CB_AP) / this.props.CB_AP * 100)}%
                 </h4>
              </Form.Field>
            </Form>   
@@ -111,8 +111,8 @@ class Pane3 extends Component {
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-                <h4>%
-                   {Math.round(((this.props.IMP_AP + this.props.IMP_AV * this.props.IMP_APF) - this.props.IMP_AP) / this.props.IMP_AP * 100)}
+                <h4>
+                   {Math.round(((this.props.IMP_AP + this.props.IMP_AV * this.props.IMP_APF) - this.props.IMP_AP) / this.props.IMP_AP * 100)}%
                 </h4>
              </Form.Field>
            </Form>   
@@ -145,8 +145,8 @@ class Pane3 extends Component {
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-                <h4>%
-                   {Math.round(((this.props.NG_AP + this.props.NG_AV * this.props.NG_APF) - this.props.NG_AP) / this.props.NG_AP * 100)}
+                <h4>
+                   {Math.round(((this.props.NG_AP + this.props.NG_AV * this.props.NG_APF) - this.props.NG_AP) / this.props.NG_AP * 100)}%
                 </h4>
              </Form.Field>
            </Form>   
@@ -179,8 +179,8 @@ class Pane3 extends Component {
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-                <h4>%
-                   {Math.round(((this.props.VN_AP + this.props.VN_AV * this.props.VN_APF) - this.props.VN_AP) / this.props.VN_AP * 100)}
+                <h4>
+                   {Math.round(((this.props.VN_AP + this.props.VN_AV * this.props.VN_APF) - this.props.VN_AP) / this.props.VN_AP * 100)}%
                 </h4>
              </Form.Field>
            </Form>    
@@ -213,8 +213,8 @@ class Pane3 extends Component {
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-                <h4>%
-                   {Math.round(((this.props.OT_AP + this.props.OT_AV * this.props.OT_APF) - this.props.OT_AP) / this.props.OT_AP * 100)}
+                <h4>
+                   {Math.round(((this.props.OT_AP + this.props.OT_AV * this.props.OT_APF) - this.props.OT_AP) / this.props.OT_AP * 100)}%
                 </h4>
              </Form.Field>
            </Form>     
