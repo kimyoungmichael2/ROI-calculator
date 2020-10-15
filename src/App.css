@@ -35,3 +35,9 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.margins{
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}

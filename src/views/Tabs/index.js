@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Divider, Tab } from 'semantic-ui-react'
+import { Divider, Tab, Container } from 'semantic-ui-react'
 import Pane1 from '../Step1'
 import Pane2 from '../Step2'
 import Pane3 from '../Step3'

@@ -12,13 +12,20 @@ class Pane4 extends Component {
   render() {
 
     const square = { width: 300, height: 300 }
+    const smallSquare = { width: 200, height: 200 }
     
       return (
-  <div>
+  <div className="margins">
+
+    <h1>Step 4: Estimated total cost of ownership</h1>
+    <p>Please insert your inputs in the boxes as they apply.</p>
+
     <Grid stackable verticalAlign='middle' columns ='equal'>
     <Grid.Row stretched>
 
     <Grid.Column>
+
+    <Divider section />
       
     <Grid stackable columns='equal'>
     <Grid.Row stretched>
@@ -130,7 +137,7 @@ class Pane4 extends Component {
       </Grid.Row>
     </Grid>
 
-    <Grid stackable columns='equal'>
+    {/* <Grid stackable columns='equal'>
     <Grid.Row stretched>
         <Grid.Column textAlign='left'>
             <Segment.Group horizontal>
@@ -153,7 +160,34 @@ class Pane4 extends Component {
             </Segment.Group>
         </Grid.Column>
       </Grid.Row>
-      </Grid>
+      </Grid> */}
+
+    <Grid stackable columns='equal'>
+    <Grid.Row stretched>
+        <Grid.Column>
+              <Segment textAlign='center' inverted padded='very' color='blue'>
+                  <h2>{Math.round(((this.props.Annual_tip_cost * 5) + this.props.I5C * 1) / (this.props.Total_savings_increase / 12) * 10) / 10}</h2>
+                  <p>Payback period on 5 year total cost (in months)</p>
+              </Segment>        
+        </Grid.Column>
+        <Grid.Column>
+              <Segment textAlign='center' inverted padded='very' color='blue'>
+                  <h2>${(this.props.Total_savings_increase * 5) - ((this.props.Annual_tip_cost * 5) + this.props.I5C * 1)}</h2>
+                  <p>5 year net profit</p>
+              </Segment>        
+        </Grid.Column>
+        <Grid.Column>
+              <Segment textAlign='center' inverted padded='very' color='blue'>
+                  <h2>{Math.round(((this.props.Total_savings_increase * 5) - ((this.props.Annual_tip_cost * 5) + this.props.I5C * 1))
+                   / 
+                   ((this.props.Annual_tip_cost * 5) + this.props.I5C * 1)
+                   *
+                   100)}%</h2>
+                   <p>5 year return on investment (ROI)</p>
+              </Segment>        
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
 
 
 

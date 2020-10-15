@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Segment, Form, Header } from 'semantic-ui-react'
+import { Grid, Segment, Form, Header, Divider } from 'semantic-ui-react'
 
 
 class Pane2 extends Component {
@@ -41,11 +41,19 @@ class Pane2 extends Component {
     const square = { width: 225, height: 225 }
     
       return (
-  <div>
+  <div className="margins">
+
+    <h1>Step 2: Projected Savings</h1>
+    <p>Includes conventional impression costs, lab discounts, shipping.</p>
+    <p>Please insert your inputs in the boxes as they apply.</p>
+
     <Grid stackable verticalAlign='middle' columns ='equal'>
     <Grid.Row stretched>
 
     <Grid.Column>
+
+    <Divider section />
+
       
     <Grid stackable columns='equal'>
     <Grid.Row stretched>
