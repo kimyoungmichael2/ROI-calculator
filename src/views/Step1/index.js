@@ -51,7 +51,7 @@ class Pane1 extends Component {
       return (
   <div className="margins">
 
-    <h1>Step 1: Dental Procedures</h1>
+    <h2>Step 1: Dental Procedures</h2>
     <p>Please insert your inputs in the boxes as they apply.</p>
 
     <Grid stackable verticalAlign='middle' columns ='equal'>

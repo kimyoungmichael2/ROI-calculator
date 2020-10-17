@@ -17,7 +17,7 @@ class Pane4 extends Component {
       return (
   <div className="margins">
 
-    <h1>Step 4: Estimated total cost of ownership</h1>
+    <h2>Step 4: Estimated total cost of ownership</h2>
     <p>Please insert your inputs in the boxes as they apply.</p>
 
     <Grid stackable verticalAlign='middle' columns ='equal'>

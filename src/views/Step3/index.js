@@ -31,7 +31,7 @@ class Pane3 extends Component {
       return (
   <div className="margins">
 
-    <h1>Step 3: Projected increase in production</h1>
+    <h2>Step 3: Projected increase in production</h2>
     <p>Please insert your inputs in the boxes as they apply.</p>
 
     <Grid stackable verticalAlign='middle' columns ='equal'>

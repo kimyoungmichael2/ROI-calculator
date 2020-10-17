@@ -43,7 +43,7 @@ class Pane2 extends Component {
       return (
   <div className="margins">
 
-    <h1>Step 2: Projected Savings</h1>
+    <h2>Step 2: Projected Savings</h2>
     <p>Includes conventional impression costs, lab discounts, shipping.</p>
     <p>Please insert your inputs in the boxes as they apply.</p>
 
