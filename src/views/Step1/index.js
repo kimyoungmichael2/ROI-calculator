@@ -253,6 +253,12 @@ class Pane1 extends Component {
       </Grid.Row>
     </Grid>
 
+    <Divider section />
+
+
+    <p>The calculator will assist you in determining your potential return on investment and total cost of ownership for Medit i500 scanner based on your practice workflow. The benchmarks are based on the average procedures, fees, cost savings for practices in the US market. 
+Contact DentCore by calling 844-292-8023 or email us at info@dentcore.com to discuss purchasing. Product details available at https://www.dentcore.com.</p>
+
     </Grid.Column>
 
     <Grid.Column width={5}>
@@ -268,6 +274,8 @@ class Pane1 extends Component {
 
     </Grid.Row>
     </Grid>
+
+
   </div>
         )
       }

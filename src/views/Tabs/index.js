@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Divider, Tab, Container } from 'semantic-ui-react'
+import { Button, Divider, Tab, Container } from 'semantic-ui-react'
 import Pane1 from '../Step1'
 import Pane2 from '../Step2'
 import Pane3 from '../Step3'
@@ -35,8 +35,15 @@ class Tabs extends Component {
       VN_AV : 0,
       OT_AV : 0,
     
-      I5C : 18000}
+      I5C : 18000,
+      
+      activeIndex: 0}
 
+
+//Tab switch button related
+
+handleRangeChange = (e) => this.setState({ activeIndex: e.target.value })
+handleTabChange = (e, { activeIndex }) => this.setState({ activeIndex })
 
 //Step 1 States
 
@@ -191,6 +198,7 @@ I5C_changeHandler = (I5C) => {
 
   render() {
     const { color } = this.state
+    const { activeIndex } = this.state
 
     return (
       <div>
@@ -374,7 +382,18 @@ I5C_changeHandler = (I5C) => {
               />
             </Tab.Pane>,
           },
-        ]} />
+        ]} 
+        activeIndex={activeIndex}
+        onTabChange={this.handleTabChange}
+        />
+          <div className="footer">
+            <div>activeIndex: {activeIndex}</div>
+            <Button
+              content="Tab 2"
+              onClick={this.handleRangeChange}
+              value={1}
+            />
+          </div>
       </div>
     )
   }
