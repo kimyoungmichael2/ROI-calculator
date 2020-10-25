@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Segment, Form, Header, Divider } from 'semantic-ui-react'
+import { Grid, Segment, Form, Header, Divider, Button } from 'semantic-ui-react'
 
 
 class Pane1 extends Component {
@@ -42,6 +42,14 @@ class Pane1 extends Component {
 
   OT_APF_handleChange = (e) => {
       this.props.OT_APF_change(e.target.value);
+  }
+  
+  handleRangeChange = (e) => {
+    this.props.handleRangeChange(e.target.value);
+  }
+  
+  handleTabChange = (e) => {
+    this.props.handleTabChange(e.target.value);
   }
   
   render() {
@@ -274,8 +282,17 @@ Contact DentCore by calling 844-292-8023 or email us at info@dentcore.com to dis
 
     </Grid.Row>
     </Grid>
-
-
+    
+    <div className='footer'>
+    <Header as='h1' >
+      <Button
+        content="Next"
+        onClick={this.handleRangeChange}
+        value={1}
+        size='huge'
+      />
+    </Header>
+    </div>
   </div>
         )
       }

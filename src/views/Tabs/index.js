@@ -42,7 +42,7 @@ class Tabs extends Component {
 
 //Tab switch button related
 
-handleRangeChange = (e) => this.setState({ activeIndex: e.target.value })
+handleRangeChange = (activeIndex) => this.setState({ activeIndex : activeIndex })
 handleTabChange = (e, { activeIndex }) => this.setState({ activeIndex })
 
 //Step 1 States
@@ -236,6 +236,9 @@ I5C_changeHandler = (I5C) => {
                   OT_APF={this.state.OT_APF}
                   OT_APF_change={this.OT_APF_changeHandler}
 
+                  activeIndex={this.state.activeIndex}
+                  handleRangeChange={this.handleRangeChange}
+
                   Step1_Total=                
                   {this.state.CB_APR * this.state.CB_APF
                    + 
@@ -386,14 +389,6 @@ I5C_changeHandler = (I5C) => {
         activeIndex={activeIndex}
         onTabChange={this.handleTabChange}
         />
-          <div className="footer">
-            <div>activeIndex: {activeIndex}</div>
-            <Button
-              content="Tab 2"
-              onClick={this.handleRangeChange}
-              value={1}
-            />
-          </div>
       </div>
     )
   }

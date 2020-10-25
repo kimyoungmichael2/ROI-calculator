@@ -44,4 +44,10 @@ h1 {
 
 .footer{
   text-align: center;
+  background-color: grey;
+  padding: 2rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width:30%;
 }
