@@ -42,12 +42,31 @@ h1 {
   margin-left: auto;
 }
 
+.emptySpace{
+  padding: 3rem;
+}
+
 .footer{
   text-align: center;
-  background-color: grey;
-  padding: 2rem;
+  background-color: lightgrey;
+  padding: 2.5rem;
   position: fixed;
   bottom: 0;
   right: 0;
-  width:30%;
+  width:100%;
+  border-top: thick black;
+}
+
+.footerButtonContinue{
+  position:absolute;
+  left:55%;
+  bottom:15%;
+  margin: 1rem;
+}
+
+.footerButtonBack{
+  position:absolute;
+  right:60%;
+  bottom:15%;
+  margin: 1rem;
 }

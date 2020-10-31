@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Segment, Form, Header, Divider, Button } from 'semantic-ui-react'
+import { Grid, Segment, Form, Header, Divider, Button} from 'semantic-ui-react'
 
 
 class Pane1 extends Component {
@@ -282,16 +282,26 @@ Contact DentCore by calling 844-292-8023 or email us at info@dentcore.com to dis
 
     </Grid.Row>
     </Grid>
+
+    <div className="emptySpace"></div>
     
     <div className='footer'>
-    <Header as='h1' >
       <Button
-        content="Next"
+        className="footerButtonBack"
+        content="< Back"
         onClick={this.handleRangeChange}
         value={1}
-        size='huge'
+        color="blue"
+        size='big'
       />
-    </Header>
+      <Button
+        className="footerButtonContinue"
+        content="Continue >"
+        onClick={this.handleRangeChange}
+        value={1}
+        color="blue"
+        size='big'
+      />
     </div>
   </div>
         )
