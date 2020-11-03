@@ -284,6 +284,9 @@ I5C_changeHandler = (I5C) => {
                   STR_SAV={this.state.STR_SAV}
                   STR_SAV_change={this.STR_SAV_changeHandler}
 
+                  activeIndex={this.state.activeIndex}
+                  handleRangeChange={this.handleRangeChange}
+
                   Total_Savings=
                   {this.state.CB_APR * this.state.CB_PUC
                     + 
@@ -319,6 +322,9 @@ I5C_changeHandler = (I5C) => {
 
                   OT_AV={this.state.OT_AV}
                   OT_AV_change={this.OT_AV_changeHandler}
+
+                  activeIndex={this.state.activeIndex}
+                  handleRangeChange={this.handleRangeChange}
 
                   CB_APF={this.state.CB_APF}
                   IMP_APF={this.state.IMP_APF}
@@ -357,6 +363,9 @@ I5C_changeHandler = (I5C) => {
 
                   I5C={this.state.I5C}
                   I5C_change={this.I5C_changeHandler}
+
+                  activeIndex={this.state.activeIndex}
+                  handleRangeChange={this.handleRangeChange}
 
                   Total_savings_increase=
                   {this.state.CB_APR * this.state.CB_PUC

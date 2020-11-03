@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Divider, Grid, Segment, Form, Header } from 'semantic-ui-react'
+import { Divider, Grid, Segment, Form, Header, Button } from 'semantic-ui-react'
 
 
 class Pane4 extends Component {
@@ -8,7 +8,13 @@ class Pane4 extends Component {
     this.props.I5C_change(e.target.value);
 }
 
-  
+  handleRangeChange = (e) => {
+  this.props.handleRangeChange(e.target.value);
+}
+
+  handleTabChange = (e) => {
+  this.props.handleTabChange(e.target.value);
+}
   render() {
 
     const square = { width: 300, height: 300 }
@@ -190,15 +196,11 @@ class Pane4 extends Component {
     </Grid>
 
 
+<Divider section />
 
-    {/* <Grid stackable columns='equal'>
-    <Grid.Row stretched>
-        <Grid.Column textAlign='right' floated='right'>
-        <Divider section />
-        </Grid.Column>
-      </Grid.Row>
-    </Grid> */}
 
+<p>The calculator will assist you in determining your potential return on investment and total cost of ownership for Medit i500 scanner based on your practice workflow. The benchmarks are based on the average procedures, fees, cost savings for practices in the US market. 
+Contact DentCore by calling <a href="tel:844-292-8023">844-292-8023</a> or email us at <a href="mailto:info@dentcore.com"> info@dentcore.com </a>to discuss purchasing. Product details available at <a href="https://www.dentcore.com"target="_blank">https://www.dentcore.com</a>.</p>
 
 
 
@@ -221,6 +223,27 @@ class Pane4 extends Component {
 
     </Grid.Row>
     </Grid>
+
+    <div className="emptySpace"></div>
+    
+    <div className='footer'>
+      <Button
+        className="footerButtonBack"
+        content="< Back"
+        onClick={this.handleRangeChange}
+        value={2}
+        color="blue"
+        size='big'
+      />
+      {/* <Button
+        className="footerButtonContinue"
+        content="Continue >"
+        onClick={this.handleRangeChange}
+        value={3}
+        color="blue"
+        size='big'
+      /> */}
+    </div>
   </div>
         )
       }
