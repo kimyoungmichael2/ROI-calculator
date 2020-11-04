@@ -5,6 +5,8 @@ import Pane2 from '../Step2'
 import Pane3 from '../Step3'
 import Pane4 from '../Step4'
 import _ from 'lodash'
+import CurrencyFormat from 'react-currency-format';
+
 
 class Tabs extends Component {
   state = { 

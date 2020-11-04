@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Divider, Grid, Segment, Form, Header, Button } from 'semantic-ui-react'
+import CurrencyFormat from 'react-currency-format';
+
 
 
 class Pane4 extends Component {
@@ -49,7 +51,7 @@ class Pane4 extends Component {
           <h4>Medit scanner tips</h4>
         </Grid.Column>
         <Grid.Column floated='right' width={3}>
-            <h4>${this.props.Annual_tip_cost}</h4>
+            <h4><CurrencyFormat value={this.props.Annual_tip_cost} displayType={'text'} thousandSeparator={true} prefix={'$'} fixedDecimalScale={true} decimalScale={2} /></h4>
         </Grid.Column>
       </Grid.Row>
     </Grid>
@@ -61,11 +63,11 @@ class Pane4 extends Component {
         </Grid.Column>
         <Grid.Column floated='right' width={3}>
            <Form>
-             <Form.Field>
-             <input type = 'number' 
-                    value={this.props.I5C} 
-                    onChange={this.I5C_handleChange} 
-                    />             
+             <Form.Field>   
+              <CurrencyFormat value={this.props.I5C} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                  const {formattedValue, value, floatValue} = values;
+                    this.props.I5C_change(floatValue);
+                }}/>
               </Form.Field>
            </Form>
         </Grid.Column>
@@ -78,7 +80,7 @@ class Pane4 extends Component {
           <h4>Total 1st year cost of ownership</h4>
         </Grid.Column>
         <Grid.Column floated='right' width={3}>
-            <h2>${this.props.Total_annual_cost}</h2>
+            <h2><CurrencyFormat value={this.props.Total_annual_cost} displayType={'text'} thousandSeparator={true} prefix={'$'} fixedDecimalScale={true} decimalScale={2} /></h2>
         </Grid.Column>
       </Grid.Row>
     </Grid>
@@ -109,7 +111,7 @@ class Pane4 extends Component {
           <h4>Medit scanner tips</h4>
         </Grid.Column>
         <Grid.Column floated='right' width={3}>
-            <h4>${this.props.Annual_tip_cost * 5}</h4>
+            <h4><CurrencyFormat value={this.props.Annual_tip_cost * 5} displayType={'text'} thousandSeparator={true} prefix={'$'} fixedDecimalScale={true} decimalScale={2} /></h4>
         </Grid.Column>
       </Grid.Row>
     </Grid>
@@ -122,10 +124,10 @@ class Pane4 extends Component {
         <Grid.Column floated='right' width={3}>
            <Form>
              <Form.Field>
-             <input type = 'number' 
-                    value={this.props.I5C} 
-                    onChange={this.I5C_handleChange} 
-                    />             
+              <CurrencyFormat value={this.props.I5C} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                  const {formattedValue, value, floatValue} = values;
+                    this.props.I5C_change(floatValue);
+                }}/>
               </Form.Field>
            </Form>
         </Grid.Column>
@@ -138,35 +140,10 @@ class Pane4 extends Component {
           <h4>Estimated total 5 year cost of ownership</h4>
         </Grid.Column>
         <Grid.Column floated='right' width={3}>
-            <h2>${(this.props.Annual_tip_cost * 5) + this.props.I5C * 1}</h2>
+            <h2><CurrencyFormat value={(this.props.Annual_tip_cost * 5) + this.props.I5C * 1} displayType={'text'} thousandSeparator={true} prefix={'$'} fixedDecimalScale={true} decimalScale={2} /></h2>
         </Grid.Column>
       </Grid.Row>
     </Grid>
-
-    {/* <Grid stackable columns='equal'>
-    <Grid.Row stretched>
-        <Grid.Column textAlign='left'>
-            <Segment.Group horizontal>
-              <Segment textAlign='center' inverted padded='very' color='blue'>
-                  <h2>{Math.round(((this.props.Annual_tip_cost * 5) + this.props.I5C * 1) / (this.props.Total_savings_increase / 12) * 10) / 10}</h2>
-                  <p>Payback period on 5 year total cost (in months)</p>
-              </Segment>
-              <Segment textAlign='center' inverted padded='very' color='blue'>
-                  <h2>${(this.props.Total_savings_increase * 5) - ((this.props.Annual_tip_cost * 5) + this.props.I5C * 1)}</h2>
-                  <p>5 year net profit</p>
-              </Segment>
-              <Segment textAlign='center' inverted padded='very' color='blue'>
-                  <h2>{Math.round(((this.props.Total_savings_increase * 5) - ((this.props.Annual_tip_cost * 5) + this.props.I5C * 1))
-                   / 
-                   ((this.props.Annual_tip_cost * 5) + this.props.I5C * 1)
-                   *
-                   100)}%</h2>
-                   <p>5 year return on investment (ROI)</p>
-              </Segment>
-            </Segment.Group>
-        </Grid.Column>
-      </Grid.Row>
-      </Grid> */}
 
     <Grid stackable columns='equal'>
     <Grid.Row stretched>
@@ -178,7 +155,7 @@ class Pane4 extends Component {
         </Grid.Column>
         <Grid.Column>
               <Segment textAlign='center' inverted padded='very' color='blue'>
-                  <h2>${(this.props.Total_savings_increase * 5) - ((this.props.Annual_tip_cost * 5) + this.props.I5C * 1)}</h2>
+                  <h2><CurrencyFormat value={(this.props.Total_savings_increase * 5) - ((this.props.Annual_tip_cost * 5) + this.props.I5C * 1)} displayType={'text'} thousandSeparator={true} prefix={'$'} fixedDecimalScale={true} decimalScale={2} /></h2>
                   <p>5 year net profit</p>
               </Segment>        
         </Grid.Column>
@@ -210,11 +187,11 @@ Contact DentCore by calling <a href="tel:844-292-8023">844-292-8023</a> or email
       <div>
     <Segment circular inverted color='blue' style={square}>
       <Header as='h2' inverted >
-      ${this.props.Total_savings_increase}
+      <CurrencyFormat value={this.props.Total_savings_increase} displayType={'text'} thousandSeparator={true} prefix={'$'} />
         <Header.Subheader>Total projected 1 year savings and increased production</Header.Subheader>
       </Header>
       <Header as='h2' inverted >
-      ${Math.round(this.props.Total_savings_increase / 12)}
+      <CurrencyFormat value={Math.round(this.props.Total_savings_increase / 12)} displayType={'text'} thousandSeparator={true} prefix={'$'} />
         <Header.Subheader>Per month</Header.Subheader>
       </Header>
     </Segment>

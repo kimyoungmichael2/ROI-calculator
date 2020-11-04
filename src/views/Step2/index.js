@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, Segment, Form, Header, Divider, Button } from 'semantic-ui-react'
+import CurrencyFormat from 'react-currency-format';
+
 
 
 class Pane2 extends Component {
@@ -87,11 +89,11 @@ class Pane2 extends Component {
         </Grid.Column>
         <Grid.Column width={3}>
            <Form>
-             <Form.Field>
-             <input type = 'number' 
-                    value={this.props.CB_PUC} 
-                    onChange={this.CB_PUC_handleChange} 
-                    />             
+             <Form.Field> 
+              <CurrencyFormat value={this.props.CB_PUC} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                  const {formattedValue, value, floatValue} = values;
+                    this.props.CB_PUC_change(floatValue);
+                }}/>
               </Form.Field>
            </Form>
         </Grid.Column>
@@ -105,7 +107,7 @@ class Pane2 extends Component {
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-               <h4>${this.props.CB_PUC * this.props.CB_APR}</h4>
+               <h4><CurrencyFormat value={this.props.CB_PUC * this.props.CB_APR} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h4>
              </Form.Field>
            </Form>   
         </Grid.Column>
@@ -120,10 +122,10 @@ class Pane2 extends Component {
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-             <input type = 'number' 
-                    value={this.props.IMP_PUC} 
-                    onChange={this.IMP_PUC_handleChange} 
-                    />    
+              <CurrencyFormat value={this.props.IMP_PUC} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                  const {formattedValue, value, floatValue} = values;
+                    this.props.IMP_PUC_change(floatValue);
+                }}/>
              </Form.Field>
            </Form>
         </Grid.Column>
@@ -137,7 +139,7 @@ class Pane2 extends Component {
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-             <h4>${this.props.IMP_PUC * this.props.IMP_APR}</h4>
+             <h4><CurrencyFormat value={this.props.IMP_PUC * this.props.IMP_APR} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h4>
              </Form.Field>
            </Form>   
         </Grid.Column>
@@ -152,10 +154,10 @@ class Pane2 extends Component {
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-             <input type = 'number' 
-                    value={this.props.NG_PUC} 
-                    onChange={this.NG_PUC_handleChange} 
-                    />    
+              <CurrencyFormat value={this.props.NG_PUC} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                  const {formattedValue, value, floatValue} = values;
+                    this.props.NG_PUC_change(floatValue);
+                }}/>
              </Form.Field>
            </Form>
         </Grid.Column>
@@ -169,7 +171,7 @@ class Pane2 extends Component {
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-             <h4>${this.props.NG_PUC * this.props.NG_APR}</h4>
+             <h4><CurrencyFormat value={this.props.NG_PUC * this.props.NG_APR} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h4>
              </Form.Field>
            </Form>   
         </Grid.Column>
@@ -184,10 +186,10 @@ class Pane2 extends Component {
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-             <input type = 'number' 
-                    value={this.props.VN_PUC} 
-                    onChange={this.VN_PUC_handleChange} 
-                    />    
+              <CurrencyFormat value={this.props.VN_PUC} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                  const {formattedValue, value, floatValue} = values;
+                    this.props.VN_PUC_change(floatValue);
+                }}/>
              </Form.Field>
            </Form>
         </Grid.Column>
@@ -201,7 +203,7 @@ class Pane2 extends Component {
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-             <h4>${this.props.VN_PUC * this.props.VN_APR}</h4>
+             <h4><CurrencyFormat value={this.props.VN_PUC * this.props.VN_APR} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h4>
              </Form.Field>
            </Form>    
         </Grid.Column>
@@ -216,10 +218,10 @@ class Pane2 extends Component {
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-             <input type = 'number' 
-                    value={this.props.OT_PUC} 
-                    onChange={this.OT_PUC_handleChange} 
-                    />    
+              <CurrencyFormat value={this.props.OT_PUC} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                  const {formattedValue, value, floatValue} = values;
+                    this.props.OT_PUC_change(floatValue);
+                }}/>
              </Form.Field>
            </Form>
         </Grid.Column>
@@ -233,7 +235,7 @@ class Pane2 extends Component {
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-             <h4>${this.props.OT_PUC * this.props.OT_APR}</h4>
+             <h4><CurrencyFormat value={this.props.OT_PUC * this.props.OT_APR} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h4>
              </Form.Field>
            </Form>     
         </Grid.Column>
@@ -248,10 +250,10 @@ class Pane2 extends Component {
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-             <input type = 'number' 
-                    value={this.props.RE_PUC} 
-                    onChange={this.RE_PUC_handleChange} 
-                    />    
+              <CurrencyFormat value={this.props.RE_PUC} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                  const {formattedValue, value, floatValue} = values;
+                    this.props.RE_PUC_change(floatValue);
+                }}/>
              </Form.Field>
            </Form>
         </Grid.Column>
@@ -268,7 +270,7 @@ class Pane2 extends Component {
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-             <h4>${this.props.RE_PUC * this.props.RE_AV}</h4>
+             <h4><CurrencyFormat value={this.props.RE_PUC * this.props.RE_AV} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h4>
              </Form.Field>
            </Form>     
         </Grid.Column>
@@ -287,11 +289,11 @@ class Pane2 extends Component {
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-             <input type = 'number' 
-                    value={this.props.STR_SAV} 
-                    onChange={this.STR_SAV_handleChange} 
-                    />    
-            </Form.Field>
+              <CurrencyFormat value={this.props.STR_SAV} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                  const {formattedValue, value, floatValue} = values;
+                    this.props.STR_SAV_change(floatValue);
+                }}/>            
+              </Form.Field>
             </Form>
         </Grid.Column>
       </Grid.Row>
@@ -309,11 +311,11 @@ Contact DentCore by calling <a href="tel:844-292-8023">844-292-8023</a> or email
       <div>
     <Segment circular inverted color='blue' style={square}>
       <Header as='h2' inverted >
-      ${this.props.Total_Savings}
+      <CurrencyFormat value={this.props.Total_Savings} displayType={'text'} thousandSeparator={true} prefix={'$'} />
         <Header.Subheader>Total projected annual savings</Header.Subheader>
       </Header>
       <Header as='h2' inverted >
-      ${Math.round(this.props.Total_Savings / 12)}
+      <CurrencyFormat value={Math.round(this.props.Total_Savings / 12)} displayType={'text'} thousandSeparator={true} prefix={'$'} />
         <Header.Subheader>Average monthly savings</Header.Subheader>
       </Header>
     </Segment>

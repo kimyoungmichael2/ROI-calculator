@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Segment, Form, Header, Divider, Button} from 'semantic-ui-react'
+import CurrencyFormat from 'react-currency-format';
 
 
 class Pane1 extends Component {
@@ -104,17 +105,17 @@ class Pane1 extends Component {
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-             <input type = 'number' 
-                    value={this.props.CB_APF} 
-                    onChange={this.CB_APF_handleChange} 
-                    /> 
+                <CurrencyFormat value={this.props.CB_APF} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                    const {formattedValue, value, floatValue} = values;
+                      this.props.CB_APF_change(floatValue);
+                  }}/>
               </Form.Field>
            </Form>        
            </Grid.Column>
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-               <h4>${this.props.CB_APR * this.props.CB_APF}</h4>
+               <h4><CurrencyFormat value={this.props.CB_APR * this.props.CB_APF} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h4>
              </Form.Field>
            </Form>   
         </Grid.Column>
@@ -139,17 +140,17 @@ class Pane1 extends Component {
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-             <input type = 'number' 
-                    value={this.props.IMP_APF} 
-                    onChange={this.IMP_APF_handleChange} 
-                    />             
+                <CurrencyFormat value={this.props.IMP_APF} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                    const {formattedValue, value, floatValue} = values;
+                      this.props.IMP_APF_change(floatValue);
+                  }}/>           
             </Form.Field>
            </Form>        
            </Grid.Column>
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-             <h4>${this.props.IMP_APR * this.props.IMP_APF}</h4>
+             <h4><CurrencyFormat value={this.props.IMP_APR * this.props.IMP_APF} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h4>
              </Form.Field>
            </Form>   
         </Grid.Column>
@@ -173,18 +174,18 @@ class Pane1 extends Component {
         </Grid.Column>
         <Grid.Column width={3}>
            <Form>
-           <Form.Field>
-             <input type = 'number' 
-                    value={this.props.NG_APF} 
-                    onChange={this.NG_APF_handleChange} 
-                    />             
+           <Form.Field>          
+                <CurrencyFormat value={this.props.NG_APF} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                    const {formattedValue, value, floatValue} = values;
+                      this.props.NG_APF_change(floatValue);
+                  }}/>    
             </Form.Field>
            </Form>        
            </Grid.Column>
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-             <h4>${this.props.NG_APR * this.props.NG_APF}</h4>
+             <h4><CurrencyFormat value={this.props.NG_APR * this.props.NG_APF} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h4>
              </Form.Field>
            </Form>   
         </Grid.Column>
@@ -209,17 +210,17 @@ class Pane1 extends Component {
         <Grid.Column width={3}>
            <Form>
              <Form.Field>
-             <input type = 'number' 
-                    value={this.props.VN_APF} 
-                    onChange={this.VN_APF_handleChange} 
-                    />             
+                <CurrencyFormat value={this.props.VN_APF} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                    const {formattedValue, value, floatValue} = values;
+                      this.props.VN_APF_change(floatValue);
+                  }}/>    
              </Form.Field>
            </Form>        
            </Grid.Column>
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-             <h4>${this.props.VN_APR * this.props.VN_APF}</h4>
+             <h4><CurrencyFormat value={this.props.VN_APR * this.props.VN_APF} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h4>
              </Form.Field>
            </Form>   
         </Grid.Column>
@@ -243,18 +244,18 @@ class Pane1 extends Component {
         </Grid.Column>
         <Grid.Column width={3}>
            <Form>
-           <Form.Field>
-             <input type = 'number' 
-                    value={this.props.OT_APF} 
-                    onChange={this.OT_APF_handleChange} 
-                    />             
+           <Form.Field>     
+                <CurrencyFormat value={this.props.OT_APF} thousandSeparator={true} prefix={'$'} onValueChange={(values) => {
+                    const {formattedValue, value, floatValue} = values;
+                      this.props.OT_APF_change(floatValue);
+                  }}/>  
             </Form.Field>
            </Form>        
            </Grid.Column>
         <Grid.Column width={3}>
             <Form>
              <Form.Field>
-             <h4>${this.props.OT_APR * this.props.OT_APF}</h4>
+             <h4><CurrencyFormat value={this.props.OT_APR * this.props.OT_APF} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h4>
              </Form.Field>
            </Form>   
         </Grid.Column>
@@ -273,7 +274,7 @@ Contact DentCore by calling <a href="tel:844-292-8023">844-292-8023</a> or email
       <div>
     <Segment circular inverted color='blue' style={square}>
       <Header as='h2' inverted >
-      ${this.props.Step1_Total}
+      <CurrencyFormat value={this.props.Step1_Total} displayType={'text'} thousandSeparator={true} prefix={'$'} />
         <Header.Subheader>Approximate annual production</Header.Subheader>
       </Header>
     </Segment>
