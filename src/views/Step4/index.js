@@ -145,6 +145,8 @@ class Pane4 extends Component {
       </Grid.Row>
     </Grid>
 
+    <Divider section />
+
     <Grid stackable columns='equal'>
     <Grid.Row stretched>
         <Grid.Column>

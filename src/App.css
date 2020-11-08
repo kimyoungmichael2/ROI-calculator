@@ -60,14 +60,14 @@ h1 {
 .footerButtonContinue{
   position:absolute;
   left:70%;
-  bottom:19%;
+  bottom:22%;
   margin: 1rem;
 }
 
 .footerButtonBack{
   position:absolute;
   right:31%;
-  bottom:19%;
+  bottom:22%;
   margin: 1rem;
 }
 
@@ -75,14 +75,14 @@ h1 {
   .footerButtonContinue{
     position:absolute;
     left:56%;
-    bottom:19%;
+    bottom:22%;
     margin: 1rem;
   }
   
   .footerButtonBack{
     position:absolute;
     right:60%;
-    bottom:19%;
+    bottom:22%;
     margin: 1rem;
   }
 }
